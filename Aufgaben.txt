@@ -1,0 +1,8 @@
+//erstellt eine funktion die per Übergabe parameter ein array füllt, und dieses zurückgibt
+
+AUFGABE: Erstellt eine Funktion, die per übergabeparameter, ein array wie unseres unten erzeugt.
+
+Aufgabe: Schreibt eine Funktion, die das VORHANDENE Array, welches unseren Müller, Maik beinhaltet, verändern kann.
+Zusatz: Ersetzt Maik, durch jemand anderen.
+
+Tipp: Übergabeparameter in eurer Funktion verwenden.
