@@ -1,8 +1,34 @@
 //erstellt eine funktion die per Übergabe parameter ein array füllt, und dieses zurückgibt
+---------------------------
 
 AUFGABE: Erstellt eine Funktion, die per übergabeparameter, ein array wie unseres unten erzeugt.
+---------------------------
 
 Aufgabe: Schreibt eine Funktion, die das VORHANDENE Array, welches unseren Müller, Maik beinhaltet, verändern kann.
 Zusatz: Ersetzt Maik, durch jemand anderen.
 
 Tipp: Übergabeparameter in eurer Funktion verwenden.
+
+---------------------------
+Erstellt eine Funktion, die maik und steffi löschen.
+
+zusatz: erstellt ein array (gerne auch fix) die steffi und maik beinhalten, und löschte diese aus diesem array.
+benutzt bitte unset($maik) zum löschen der variable oder unset($maik['key']) zum löschen des key-value pairs
+
+NOTE: wir wollen eigentlich nur im kopf den zusammenhang des löschen verstehen, welcher später in unserer mariadb
+abläuft.
+
+---------------------------
+Erstellt eine Datenbank User_2406 mit folgenden Inhalten:
+Eine Tabelle User mit den Spalten Vorname, Nachname und Alter.
+___________________________
+
+Erstellt eine Funktion, die die Datenbank Verbindung herstellt! (getVerbindung)
+___________________________
+
+Schreibt die makaeArray() Funktion so um, dass Sie maik in die datenbank einfügt.
+Benennt die Funktion zu createUser() um.
+ZUSATZ: Funktion benutzt übergabeparameter. Ist also Variabel Nutzbar.
+
+(es wird ein sql stament benötigt und eine datenbank verbindung)
+Denkt an prepared statements dabei

@@ -6,16 +6,20 @@
 </head>
 <body style="background-color: dimgrey">
 
-Erstellt eine Funktion, die maik und steffi löschen.
-
-zusatz: erstellt ein array (gerne auch fix) die steffi und maik beinhalten, und löschte diese aus diesem array.
-benutzt bitte unset($maik) zum löschen der variable oder unset($maik['key']) zum löschen des key-value pairs
-
-NOTE: wir wollen eigentlich nur im kopf den zusammenhang des löschen verstehen, welcher später in unserer mariadb
-abläuft.
 
 <?php
 //DEFINITIONSABSCHNITT
+
+function getVerbindung() : PDO
+{
+    $servername ="127.0.0.1";
+    $username ="root";
+    $password ="";
+    $dbname = "User_2406";
+   return new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+}
+
+
 //$array = ["name"=>"sam", "nachname"=>"bandoly", "alter"=>26]; //altes array durch Funktion ersetzt
 
 //CREATE
