@@ -16,7 +16,7 @@ function getVerbindung() : PDO
     $username ="root";
     $password ="";
     $dbname = "User_2406";
-   return new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    return new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 }
 
 

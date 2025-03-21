@@ -32,3 +32,10 @@ ZUSATZ: Funktion benutzt übergabeparameter. Ist also Variabel Nutzbar.
 
 (es wird ein sql stament benötigt und eine datenbank verbindung)
 Denkt an prepared statements dabei
+___________________________
+Schreibt die übrigen 3 Funktionen gemäß ihres Sinns um.
+readUser();
+updateUser();
+deleteUser();
+
+Tipp: es gibt nur 2 User die man per alter, vorname und/oder nachname "suchen" bzw idewntifizieren kann.
