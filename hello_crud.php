@@ -10,6 +10,7 @@
 <?php
 //DEFINITIONSABSCHNITT
 
+//gibt uns unsere Datenverbindung der Datenbank zurück
 function getVerbindung() : PDO
 {
     $servername ="127.0.0.1";
@@ -23,6 +24,7 @@ function getVerbindung() : PDO
 //$array = ["name"=>"sam", "nachname"=>"bandoly", "alter"=>26]; //altes array durch Funktion ersetzt
 
 //CREATE
+//Erstellt uns einen Datenbankeintrag
 function createUser (string $vorname, string $nachname, int $age) : void //Schreibt in die DB
 {
     $dbconn = getVerbindung();
@@ -36,6 +38,8 @@ function createUser (string $vorname, string $nachname, int $age) : void //Schre
     $stmt->execute();
 }
 //READ
+//Ersterllt ein  Array welches wir in eine variable speichern können
+//und als "objekt"...
 function readUser(string $vorname, string $nachname) : array {
     $dbconn = getVerbindung();
 
@@ -49,6 +53,7 @@ function readUser(string $vorname, string $nachname) : array {
     return $result;
 }
 //UPDATE
+//Updated einen Datensatz bei übergabe des "Objektes" und neuer "parameter"
 function updateUser(array &$objekt, string $newName, string $newVorname, int $newAlter) : void
 {
     $objekt['name'] = $newName;
@@ -58,6 +63,7 @@ function updateUser(array &$objekt, string $newName, string $newVorname, int $ne
     $objekt['alter'] = $newAlter;
 }
 //DELETE
+//Bei übergabe des "objektes" wird der User aus der Datehnbank per ID gelöscht
 function deleteUser(array &$arr): void
 {
     $dbconn = getVerbindung();
@@ -67,6 +73,7 @@ function deleteUser(array &$arr): void
     $stmt->execute();
 }
 
+//Begrüßt unseren user
 function print_HelloWorld (string $text) : void
 {
     echo "<h2>{$text}</h2>";
