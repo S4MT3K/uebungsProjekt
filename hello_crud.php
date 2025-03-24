@@ -54,13 +54,17 @@ function readUser(string $vorname, string $nachname) : array {
 }
 //UPDATE
 //Updated einen Datensatz bei übergabe des "Objektes" und neuer "parameter"
-function updateUser(array &$objekt, string $newName, string $newVorname, int $newAlter) : void
+function updateUser(array &$objekt, string $newVorname, string $newNachname, int $newAlter) : void
 {
-    $objekt['name'] = $newName;
-
-    $objekt['vorname'] = $newVorname;
-
-    $objekt['alter'] = $newAlter;
+    $dbconn = getVerbindung();
+    $id = $objekt[0]["id"];
+    $query = "UPDATE User SET vorname = :newvorname, nachname = :newnachname, age = :newage WHERE id = :id";
+    $stmt = $dbconn->prepare($query);
+    $stmt->bindParam('id', $id, PDO::PARAM_INT);
+    $stmt->bindParam(':newvorname', $newVorname, PDO::PARAM_STR);
+    $stmt->bindParam(':newnachname', $newNachname, PDO::PARAM_STR);
+    $stmt->bindParam(':newage', $newAlter, PDO::PARAM_INT);
+    $stmt->execute();
 }
 //DELETE
 //Bei übergabe des "objektes" wird der User aus der Datehnbank per ID gelöscht
@@ -106,12 +110,22 @@ function print_HelloWorld (string $text) : void
 ?>
 <pre>
 <!--    --><?php
-    $maik = readUser("maik", "müller");
+    $steffi = readUser("Stefanie", "Gwen");
+    echo $steffi[0]["vorname"] . " " . $steffi[0]["nachname"] . "<br>";
+    updateUser($steffi, "steffi", "meyer", 57);
+    $neuesteffi = readUser("steffi", "meyer");
+
+    echo $steffi[0]["vorname"] . " " . $steffi[0]["nachname"] . "<br>";
+    echo $neuesteffi[0]["vorname"] . " " . $steffi[0]["nachname"] . "<br>";
+
+
+//    echo $steffi[0]["vorname"] . " " . $steffi[0]["nachname"] . "<br>";
+
 //    print_r($maik);
 //    var_dump($maik);
 //    print_r($Steffi);
 //    echo $Steffi['name'];
-    deleteUser($maik);
+    //deleteUser($steffi);
 //    ?>
 </pre>
 
