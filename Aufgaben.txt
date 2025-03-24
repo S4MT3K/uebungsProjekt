@@ -39,3 +39,32 @@ updateUser();
 deleteUser();
 
 Tipp: es gibt nur 2 User die man per alter, vorname und/oder nachname "suchen" bzw idewntifizieren kann.
+
+
+############################
+############################
+############################
+############################
+#######    CLASSES    ######
+
+
+AUFAGBE: schreibt eine Methode die die Augenfarbe eines Objektes der klasse Mensch verändern kann
+----------------------------
+
+Schreibt eine If anweisung in der Set Groesse Methode, die maximal 280 und minimal 90 engegennimmt.
+sollte dieser wert über- oder unterschritten werden, soll ein default wert von 180 gesetzt werden.
+----------------------------
+
+AUFGABE: Schreibt die klasse schüler mit folgenden membern/parametern/properties:
+
+vorname
+nachname
+
+bildungsgutschein (ja nein)
+ausbildungsanfang
+
+VERERBT DABEI BITTE VON DER KLASSE MENSCH!
+
+____________________________
+Erstellt die klasse DBConn mit allen erforderlichen gettern settern und konstruktoren!!!!
+Zusatz: ersetzt die dbconn funktion in der hello_crud.php und benutzt stattdessen die klassenaufrufe bzw. methoden!

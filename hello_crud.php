@@ -10,6 +10,10 @@
 <?php
 //DEFINITIONSABSCHNITT
 
+spl_autoload_register(function ($class) {
+   include '10_classes/' . $class . '.php';
+});
+
 //gibt uns unsere Datenverbindung der Datenbank zurück
 function getVerbindung() : PDO
 {
@@ -83,50 +87,13 @@ function print_HelloWorld (string $text) : void
     echo "<h2>{$text}</h2>";
 }
 //Ausführ Abschnitt
-
-//Funktionen, die Uns User in die Datenbank Schreiben
-//createUser("maik","müller",26);
-//createUser("Steffi","meyer",41);
-
-
-
-
-
-//$maik = makeArray("Müller", "Maik", 36);
-
-//print_HelloWorld("Hallo Welt");
-
-//WEBMASKE
-//Funktionen die der User Benutzen kann
-
-//$array['alter']= 36; //UPDATE fürs Array
-//
-//begruessung($maik);
-//
-//updateUser($maik, "Müller", "Maik", 36);
-//updateUser($Steffi, "Meyer", "Stefanie", 40);
-//
-//deleteUser($maik);
 ?>
 <pre>
-<!--    --><?php
-    $steffi = readUser("Stefanie", "Gwen");
-    echo $steffi[0]["vorname"] . " " . $steffi[0]["nachname"] . "<br>";
-    updateUser($steffi, "steffi", "meyer", 57);
-    $neuesteffi = readUser("steffi", "meyer");
-
-    echo $steffi[0]["vorname"] . " " . $steffi[0]["nachname"] . "<br>";
-    echo $neuesteffi[0]["vorname"] . " " . $steffi[0]["nachname"] . "<br>";
-
-
-//    echo $steffi[0]["vorname"] . " " . $steffi[0]["nachname"] . "<br>";
-
-//    print_r($maik);
-//    var_dump($maik);
-//    print_r($Steffi);
-//    echo $Steffi['name'];
-    //deleteUser($steffi);
-//    ?>
+    <?php
+    $me = new User("blau", 122, "blond");
+    $me2 =get_parent_class($me);
+    echo $me2;
+    ?>
 </pre>
 
 </body>
