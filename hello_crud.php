@@ -90,9 +90,7 @@ function print_HelloWorld (string $text) : void
 ?>
 <pre>
     <?php
-    $me = new User("blau", 122, "blond");
-    $me2 =get_parent_class($me);
-    echo $me2;
+
     ?>
 </pre>
 

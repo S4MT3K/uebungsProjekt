@@ -68,3 +68,10 @@ VERERBT DABEI BITTE VON DER KLASSE MENSCH!
 ____________________________
 Erstellt die klasse DBConn mit allen erforderlichen gettern settern und konstruktoren!!!!
 Zusatz: ersetzt die dbconn funktion in der hello_crud.php und benutzt stattdessen die klassenaufrufe bzw. methoden!
+____________________________
+
+Erstellt eine neue Klasse (inkl. Datei) Lebewesen mit den Folgenden Properties DNA als string sichtbarkeit public und der
+methode getDNA();
+____________________________
+Schreibt in der klasse User einen Konstruktor, damit wir diesen bei der erstellung von einem User Objekt callen können um
+die benötigten "eigenschaften" der klasse User zu bekommen / füllen!

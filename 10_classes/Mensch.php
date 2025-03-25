@@ -1,5 +1,5 @@
 <?php
-class Mensch
+class Mensch extends Lebewesen //Mensch erbt Methoden und eigenschaften (prperties / member) von Lebewesen
 {
     private string $augenfarbe;
     private int $groesse;
@@ -7,8 +7,9 @@ class Mensch
 
     private Fingerabdruck $fingerabdruck;
 
-    public function __construct($augenfarbe, $groesse, $haarfarbe)
+    public function __construct($augenfarbe, $groesse, $haarfarbe, $dna)
     {
+        parent::__construct($dna);
         $this->augenfarbe = $augenfarbe;
         $this->groesse = $groesse;
         $this->haarfarbe = $haarfarbe;
@@ -42,7 +43,7 @@ class Mensch
         }
     }
 
-    public function getHaarfarbe() : string
+    public function getHaarfarbe() : string // Mit dieser Methode kann die Haarfarbe ausgegeben werden
     {
         return $this->haarfarbe;
     }
@@ -52,7 +53,7 @@ class Mensch
         $this->haarfarbe = $newHaarfarbe;
     }
 
-    public function getFingerabdruck() : Fingerabdruck
+    public function getFingerabdruck() : Fingerabdruck // Mit dieser Methode kann der Fingerabdruck ausgegeben werden
     {
         return $this->fingerabdruck;
     }
