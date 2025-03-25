@@ -9,7 +9,7 @@ class Fingerabdruck
         $this->text = $text;
     }
 
-    public function getFingerAbdruck()
+    public function getFingerabdruckFromUser() : string
     {
         return $this->text;
     }

@@ -90,6 +90,20 @@ function print_HelloWorld (string $text) : void
 ?>
 <pre>
     <?php
+    $gemeinsamerAusbildungsbeginn = new DateTime("17-06-2024");
+
+//Anrufen (callen) der classe bzw. erstellen eines Objektes)
+$NeutralePerson1 = new User("Donald", "Obama", true, $gemeinsamerAusbildungsbeginn, "braun", 183, "schwarz", "vorhanden");
+$NeutralePerson2 = new User("Ulisses", "Trump", true, $gemeinsamerAusbildungsbeginn, "braun", 183, "schwarz", "vorhanden");
+$NeutralePerson3 = new User("Benjamin", "Bush", true, $gemeinsamerAusbildungsbeginn, "braun", 183, "schwarz", "vorhanden");
+
+
+
+
+$conn = DBConn::getConnection();
+var_dump($conn);
+var_dump($NeutralePerson1);
+var_dump($NeutralePerson2);
 
     ?>
 </pre>

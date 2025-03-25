@@ -1,5 +1,6 @@
 <?php
-class Mensch extends Lebewesen //Mensch erbt Methoden und eigenschaften (prperties / member) von Lebewesen
+abstract class Mensch extends Lebewesen //Mensch erbt Methoden und eigenschaften (prperties / member) von Lebewesen
+    //das keyword extends initialisiert eine vererbung der genannten klasse
 {
     private string $augenfarbe;
     private int $groesse;
@@ -7,15 +8,19 @@ class Mensch extends Lebewesen //Mensch erbt Methoden und eigenschaften (prperti
 
     private Fingerabdruck $fingerabdruck;
 
-    public function __construct($augenfarbe, $groesse, $haarfarbe, $dna)
+    public function __construct(string $augenfarbe, int $groesse, string $haarfarbe, string $dna)
     {
         parent::__construct($dna);
+        //eine elternklasse (in diesem Fall Lebewesen) hat einen einen Konstruktor, dieser muss bei Aufrufen des eigenen Konstruktors mit aufgerufen werden
+        //die dabei benötigten variablen werden dem aktuellen Konstruktor mit Übergeben
         $this->augenfarbe = $augenfarbe;
         $this->groesse = $groesse;
         $this->haarfarbe = $haarfarbe;
+        //da unser Fingerabdruck zu "uns" gehört, woird dieser in der menschklasse SOFORT instanziiert (objekt orientiertes denken).
+        //Sie benötigt keinerlei übergabeparameter und ist somit ein teil des Menschen.
         $this->fingerabdruck = new Fingerabdruck();
     }
-
+    //Nachfolgend Getter und Setter
     public function getAugenfarbe() : string
     {
         return $this->augenfarbe;
@@ -53,7 +58,7 @@ class Mensch extends Lebewesen //Mensch erbt Methoden und eigenschaften (prperti
         $this->haarfarbe = $newHaarfarbe;
     }
 
-    public function getFingerabdruck() : Fingerabdruck // Mit dieser Methode kann der Fingerabdruck ausgegeben werden
+    public function getFingerabdruckObject() : Fingerabdruck // Mit dieser Methode kann der Fingerabdruck ausgegeben werden
     {
         return $this->fingerabdruck;
     }
