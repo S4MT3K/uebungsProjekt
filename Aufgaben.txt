@@ -80,8 +80,8 @@ ____________________________
 Schreibt bitte für die USer.php bzw. User klasse alle denkbaren und ggf zusätzlich brauchbaren Setter Und getter funktionen!
 ____________________________
 
-Erweitert die user klasse um eine funktion (statisch oder nicht) die die INSTANZEN der User zählen kann.
-also umgefähr so
+Erweitert die user klasse um eine methode (statisch oder nicht) die die INSTANZEN der User zählen kann.
+also ungefähr so
 
    public static function CountInstances()
     {
