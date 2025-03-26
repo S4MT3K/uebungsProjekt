@@ -5,7 +5,8 @@ class Fingerabdruck
 
     public function __construct()
     {
-        $text = "hübscher Finger";
+        $text = random_int(0, 42);
+        //$text = "hübscher Finger";
         $this->text = $text;
     }
 

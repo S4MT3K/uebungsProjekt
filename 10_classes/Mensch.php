@@ -1,5 +1,5 @@
 <?php
-abstract class Mensch extends Lebewesen //Mensch erbt Methoden und eigenschaften (prperties / member) von Lebewesen
+class Mensch extends Lebewesen //Mensch erbt Methoden und eigenschaften (prperties / member) von Lebewesen
     //das keyword extends initialisiert eine vererbung der genannten klasse
 {
     private string $augenfarbe;

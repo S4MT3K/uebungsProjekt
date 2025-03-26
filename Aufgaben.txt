@@ -89,3 +89,7 @@ also ungefähr so
     }
 
     Denkt dabei bitte an etwaige andere benötigte parameter/funktionen/etc.
+
+---------------------------
+DATENSTRUKTUR IN DER DATENBANK ANPASSEN!!! Heisst: Unser User soll representativ mit seinen Attributen/parametern
+in der Datenbank existieren können.

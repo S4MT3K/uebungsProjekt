@@ -1,7 +1,7 @@
 <?php
-class DBConn
+abstract class DBConn
 {
-    public static function getConnection() : PDO
+    protected static function getConnection() : PDO
     {
          $host = "127.0.0.1";
          $user = "root";

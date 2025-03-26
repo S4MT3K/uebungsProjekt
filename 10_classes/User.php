@@ -1,12 +1,12 @@
 <?php
 class User extends Mensch
 {
-
-
     private string $vorname;
     private string $nachname;
     private bool $bildungsgutschein;
     private DateTime $ausbildungsbeginn;
+    private static int $instances = 0; //Static bedeutet, dass diese Variable NUR für die KLASSE, nicht aber für das Objekt selbst steht.
+                                   //Sie ist also nur INNERHALB der aktuellen Klasse verfügbar bzw. Sichtbar.
 
     /**
      * @param string $vorname
@@ -25,11 +25,13 @@ class User extends Mensch
         $this->nachname = $nachname;
         $this->bildungsgutschein = $bildungsgutschein;
         $this->ausbildungsbeginn = $ausbildungsbeginn;
+        //User::$instances++;
+        self::$instances++;
     }
 
-    public static function CountInstances()
+    public static function getCountOfInstances()
     {
-
+        return self::$instances;
     }
 
     public function getVorname(): string
