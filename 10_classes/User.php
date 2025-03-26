@@ -29,6 +29,8 @@ class User extends Mensch
         self::$instances++;
     }
 
+    //SETTER & GETTER SECTION
+
     public static function getCountOfInstances()
     {
         return self::$instances;
@@ -61,5 +63,38 @@ class User extends Mensch
     public function getAusbildungsbeginn(): DateTime
     {
         return $this->ausbildungsbeginn;
+    }
+
+    //CRUD SECTION
+
+    static function createUser(string $vorname, string $nachname, bool $bildungsgutschein, string $ausbildungsbeginn, string $augenfarbe, int $groesse, string $haarfarbe, string $dna): self
+    {
+        // Holen der Datenbankverbindung
+        $dbconn = DBConn::getConnection();
+        // Name der Tabelle
+        $tablename = static::class; // Definiere den Tabellennamen oder übergib ihn als Parameter
+
+        // Korrekte SQL-Anweisung mit den richtigen Werten
+        $statement_create = "INSERT INTO $tablename (vorname, nachname, bildungsgutschein, ausbildungsbeginn, augenfarbe, groesse, haarfarbe, dna, fingerabdruck) 
+                         VALUES (:fname, :lname, :bildungsgutschein, :ausbildungsbeginn, :augenfarbe, :groesse, :haarfarbe, :dna, :fingerabdruck)";
+
+        // Vorbereitung des SQL-Statements
+        $request = $dbconn->prepare($statement_create);
+
+        // Bind-Parameter
+        $request->bindParam(':fname', $vorname, PDO::PARAM_STR);
+        $request->bindParam(':lname', $nachname, PDO::PARAM_STR);
+        $request->bindParam(':bildungsgutschein', $bildungsgutschein, PDO::PARAM_BOOL); // Für Boolean
+        $request->bindParam(':ausbildungsbeginn', $ausbildungsbeginn); // Als String für DATETIME
+        $request->bindParam(':augenfarbe', $augenfarbe, PDO::PARAM_STR);
+        $request->bindParam(':groesse', $groesse, PDO::PARAM_INT);
+        $request->bindParam(':haarfarbe', $haarfarbe, PDO::PARAM_STR);
+        $request->bindParam(':dna', $dna, PDO::PARAM_STR);
+        $request->bindParam(':fingerabdruck', $fingerabdruck, PDO::PARAM_STR);
+
+        // Ausführung des Statements
+        $request->execute();
+
+        //FUNKTIONSHAUSAUFGABE
     }
 }

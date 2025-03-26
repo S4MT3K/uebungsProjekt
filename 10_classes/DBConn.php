@@ -6,8 +6,8 @@ abstract class DBConn
          $host = "127.0.0.1";
          $user = "root";
          $pass = "";
-         $dbname = "User";
+         $dbname = "user_2406";
 
-        return new PDO("mysql:host=$host;$dbname", $user, $pass);
+        return new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
     }
 }
