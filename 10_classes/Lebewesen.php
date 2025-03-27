@@ -5,10 +5,10 @@ abstract class Lebewesen extends DBConn // Unsere Oberklasse von der wir Vererbe
     protected string $dna = "!"; //beschützten (Protected) string $dna
     //ist innerhalb der vererbten klassen "sichtbar" bzw. Anrufbar
 
-    public function __construct(string $dna)
-    {
-        $this->dna = $dna;
-    }
+    //public function __construct(string $dna)
+    //{
+    //   $this->dna = $dna;
+    //}
 
     /**
      * @return string
