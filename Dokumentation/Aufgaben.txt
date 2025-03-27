@@ -98,3 +98,6 @@ in der Datenbank existieren können.
 Die Methode createUser, schreibt uns ja leider nur einen Datenbank eintrag. Wir wollen aber auch weitergehend im Code (index.php)
 mit diesem "createten" Objekt arbeiten. das heisst, wir müssten uns aus den eben übergebenen parametern auch ein objekt erstellen.
 dieses soll auch in der createUSer Funktion (die ja auch zusätzlich in die DB speichert) passieren.
+---------------------------
+
+SCHREIBT EINE METHODE deleteByID(); in die Klasse DBConn.

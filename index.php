@@ -21,16 +21,17 @@ spl_autoload_register(function ($class) {
 $date = new DateTime();
 $dt = $date->format('17-04-2024');
 
-$newUser = User::createUser("Bob", "Ronaldo", false , "gelb", 155, "schwarz", "yxY287", $dt);
+//$newUser = User::createUser("Bob", "Ronaldo", false , "gelb", 155, "schwarz", "yxY287", $dt);
 
 
 //echo $newUser->getVorname();
     echo "<br>";
-    var_dump($newUser);
+    //var_dump($newUser);
 //echo $newUser->getNachname();
     echo "<br>";
 
-    echo $newUser->getNachname();
+    //echo $newUser->getNachname();
+User::deletebyID(50);
 
 
 
