@@ -31,8 +31,24 @@ $dt = $date->format('17-04-2024');
     echo "<br>";
 
     //echo $newUser->getNachname();
-User::deletebyID(50);
 
+//$me = User::createUser("sam", "Bandoly", true, "blau", 122, "blond", "GUT", "23.01.23");
+$me37 = User::findbyID(37);
+echo $me37->getId();
+
+echo $me37->getVorname();
+
+echo $me37->getNachname();
+
+$me37->updateUser("Bobson", "Michalski", false, "01.01.1434", "braun", 187, "schwarz", "Ist Vorhanden");
+echo"<br>";
+echo"<br>";
+
+echo $me37->getVorname();
+
+echo $me37->getNachname();
+
+//echo $me->updateUser();
 
 
 

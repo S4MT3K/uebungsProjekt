@@ -101,3 +101,8 @@ dieses soll auch in der createUSer Funktion (die ja auch zusätzlich in die DB s
 ---------------------------
 
 SCHREIBT EINE METHODE deleteByID(); in die Klasse DBConn.
+
+Schreibt die Update Methode.
+Frage: Wohin? Was Brauche ich dafür für übergabeparameter?
+Tipp: wir wollen einen USER updaten. Und von mir aus wird es „keinen“ Tipp geben was den rückgabewert anbelangt,
+bzw. Könnte es so gehandelt werden wie in der delete Funktion!

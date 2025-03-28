@@ -1,10 +1,14 @@
 <?php
 class User extends Mensch
 {
-    //private string $vorname = "";
-    //private string $nachname = "";
-    //private bool $bildungsgutschein = false;
-    //private string $ausbildungsbeginn = "";
+    private ?int $Id = null;
+    private ?string $vorname = null;
+    private ?string $nachname = null;
+    private ?string $augenfarbe = null;
+    private ?int $groesse = null;
+    private ?string $haarfarbe = null;
+    private ?bool $bildungsgutschein = null;
+    private ?string $ausbildungsbeginn = null;
     //private static int $instances = 0; //Static bedeutet, dass diese Variable NUR für die KLASSE, nicht aber für das Objekt selbst steht.
                                    //Sie ist also nur INNERHALB der aktuellen Klasse verfügbar bzw. Sichtbar.
 
@@ -28,6 +32,11 @@ class User extends Mensch
     public static function getCountOfInstances()
     {
         return self::$instances;
+    }
+
+    public function getId() : int
+    {
+        return $this->Id;
     }
 
     public function getVorname(): string
@@ -93,5 +102,49 @@ class User extends Mensch
         //FUNKTIONSHAUSAUFGABE
 
         return self::findbyID($dbconn->lastInsertId()); // gibt uns nach Datenbankeintrag, das User Objekt zur weiteren be- bzw. Verarbeitung zurück
+    }
+
+    public function updateUser($vorname, $nachname, $bildungsgutschein, $ausbildungsbeginn, $augenfarbe, $groesse, $haarfarbe, $dna) : string
+    {
+        try
+        {
+            $dbconn = DBConn::getConnection();
+            $id = $this->getId();
+
+            $stmnt_update = "UPDATE user 
+                  SET vorname = :vorname, 
+                      nachname = :nachname, 
+                      bildungsgutschein = :bildungsgutschein, 
+                      ausbildungsbeginn = :ausbildungsbeginn, 
+                      augenfarbe = :augenfarbe, 
+                      groesse = :groesse, 
+                      haarfarbe = :haarfarbe, 
+                      dna = :dna 
+                  WHERE id = :id";
+
+            $request = $dbconn->prepare($stmnt_update);
+            $request->bindParam(':id', $id, PDO::PARAM_INT);
+            $request->bindParam(':vorname', $vorname);
+            $request->bindParam(':nachname', $nachname);
+            $request->bindParam(':augenfarbe', $augenfarbe);
+            $request->bindParam(':haarfarbe', $haarfarbe);
+            $request->bindParam(':groesse', $groesse, PDO::PARAM_INT);
+            $request->bindParam(':ausbildungsbeginn', $ausbildungsbeginn);
+            $request->bindParam(':bildungsgutschein', $bildungsgutschein, PDO::PARAM_BOOL);
+            $request->bindParam(':dna', $dna);
+
+            $request->execute();
+
+            if ($request->rowCount() == 1) {
+                return "ÄNDERUNG ERFOLGREICH AUSGEFÜHRT";
+            }
+            else {
+                return "Fehler aufgetreten: ";
+            }
+        }
+        catch (PDOException $e)
+        {
+            return "Fehler aufgetreten: " . $e->getMessage();
+        }
     }
 }

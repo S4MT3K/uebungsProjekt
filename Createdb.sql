@@ -13,6 +13,5 @@ CREATE TABLE User (
                       augenfarbe VARCHAR(15),
                       groesse int (3),
                       haarfarbe VARCHAR(25),
-                      dna TEXT,
-                      fingerabdruck VARCHAR(255)
+                      dna TEXT
 );

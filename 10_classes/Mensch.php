@@ -2,10 +2,6 @@
 class Mensch extends Lebewesen //Mensch erbt Methoden und eigenschaften (prperties / member) von Lebewesen
     //das keyword extends initialisiert eine vererbung der genannten klasse
 {
-    //private string $augenfarbe = "";
-    //private int $groesse = 0;
-    //private string $haarfarbe = "";
-
     //private Fingerabdruck $fingerabdruck;
 
     //public function __construct(string $augenfarbe, int $groesse, string $haarfarbe, string $dna)

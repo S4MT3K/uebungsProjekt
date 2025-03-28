@@ -11,6 +11,7 @@ abstract class DBConn
         return new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
     }
 
+    // READ
     public static function findbyID(int $id) : static
     {
         $tblname = static::class;
@@ -23,6 +24,7 @@ abstract class DBConn
         return $statement_read->fetchObject($tblname);
     }
 
+    //DELETE
     public static function deletebyID(int $id) : void
     {
         try {
